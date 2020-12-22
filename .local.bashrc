@@ -11,6 +11,7 @@ export VISUAL="vim"
 # fish
 if [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]]
 then
+	neofetch
 	exec fish
 fi
 
