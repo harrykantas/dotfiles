@@ -3,8 +3,9 @@
 SETUVAR __fish_initialized:3100
 SETUVAR _fish_abbr_dotfiles:git\x20\x2d\x2dgit\x2ddir\x3d\x24HOME/\x2edotfiles/\x20\x2d\x2dwork\x2dtree\x3d\x24HOME
 SETUVAR _fish_abbr_gdm_2D_login:sudo\x20machinectl\x20shell\x20gdm\x40\x20/bin/bash
-SETUVAR _fish_abbr_pac:yay\x20\x2d\x2deditmenu
-SETUVAR _fish_abbr_pacupd:yay\x20\x2d\x2deditmenu\x20\x2dSyyu
+SETUVAR _fish_abbr_pac:yay
+SETUVAR _fish_abbr_pacclean:yay\x20\x2d\x2dclean\x20\x26\x26\x20flatpak\x20uninstall\x20\x2d\x2dunused
+SETUVAR _fish_abbr_pacupd:yay\x20\x2d\x2deditmenu\x20\x2dSyyu\x20\x26\x26\x20echo\x20\x26\x26\x20flatpak\x20update
 SETUVAR fish_color_autosuggestion:555
 SETUVAR fish_color_cancel:normal
 SETUVAR fish_color_command:005fd7
