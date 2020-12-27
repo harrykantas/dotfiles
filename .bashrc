@@ -15,8 +15,8 @@ shopt -s autocd
 export HISTSIZE=
 export HISTFILESIZE=
 export HISTCONTROL=ignoreboth
-export EDITOR="vim"
-export VISUAL="vim"
+export EDITOR="nvim"
+export VISUAL="nvim"
 
 # fish
 if [[ $(ps --no-header --pid=$PPID --format=cmd) != "fish" ]]
