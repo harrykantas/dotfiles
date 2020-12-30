@@ -1,10 +1,11 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR __fish_initialized:3100
-SETUVAR _fish_abbr_ansible:ansible\x20\x2d\x2dplaybook\x2ddir\x20\x24HOME/Projects/ansible/playbooks
+SETUVAR _fish_abbr_ansible:ansible\x20\x2d\x2dplaybook\x2ddir\x20\x24HOME/Projects/ansible\x2dplaybooks/playbooks
 SETUVAR _fish_abbr_code:com\x2evisualstudio\x2ecode\x2doss
 SETUVAR _fish_abbr_dotfiles:git\x20\x2d\x2dgit\x2ddir\x3d\x24HOME/Projects/dotfiles/\x20\x2d\x2dwork\x2dtree\x3d\x24HOME
 SETUVAR _fish_abbr_gdm_2D_login:sudo\x20machinectl\x20shell\x20gdm\x40\x20/bin/bash
+SETUVAR _fish_abbr_mc:mc\x20\x2d\x2dnosubshell
 SETUVAR _fish_abbr_pac:yay
 SETUVAR _fish_abbr_pacclean:yay\x20\x2d\x2dclean\x20\x26\x26\x20flatpak\x20uninstall\x20\x2d\x2dunused
 SETUVAR _fish_abbr_pacupd:yay\x20\x2d\x2deditmenu\x20\x2dSyyu\x20\x26\x26\x20echo\x20\x26\x26\x20flatpak\x20update
