@@ -6,6 +6,7 @@ SETUVAR _fish_abbr_gdm_2D_login:sudo\x20machinectl\x20shell\x20gdm\x40\x20/bin/b
 SETUVAR _fish_abbr_mc:mc\x20\x2d\x2dnosubshell
 SETUVAR _fish_abbr_pac:yay
 SETUVAR _fish_abbr_pacupd:yay\x20\x2d\x2deditmenu\x20\x2dSyyu
+SETUVAR _fish_abbr_sort__menu:gsettings\x20reset\x20org\x2egnome\x2eshell\x20app\x2dpicker\x2dlayout
 SETUVAR fish_color_autosuggestion:555
 SETUVAR fish_color_cancel:normal
 SETUVAR fish_color_command:005fd7
