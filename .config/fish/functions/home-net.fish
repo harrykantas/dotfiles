@@ -4,5 +4,7 @@ function home-net
       wg-quick up wg0
     case down disconnect stop
       wg-quick down wg0
+    case status show
+      sudo wg show
   end
 end

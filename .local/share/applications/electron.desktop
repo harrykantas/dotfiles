@@ -1,8 +1,8 @@
 [Desktop Entry]
 Type=Application
-Name=Electron 9
-Icon=electron9
-Exec=electron9 %u
+Name=Electron
+Icon=electron
+Exec=electron %u
 Categories=Development;GTK;
 StartupNotify=true
 NoDisplay=true
