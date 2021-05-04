@@ -3,6 +3,8 @@ function hide-application
   set APP_SRC_PATH "/usr/share/applications"
   set APP_DEST_PATH "$HOME/.local/share/applications"
 
-  cp "$APP_SRC_PATH/$APP_NAME" "$APP_DEST_PATH"
-  echo "NoDisplay=true" >> "$APP_DEST_PATH/$APP_NAME"
+  if test ! -f "$APP_DEST_PATH/$APP_NAME"
+    cp "$APP_SRC_PATH/$APP_NAME" "$APP_DEST_PATH"
+    echo "NoDisplay=true" >> "$APP_DEST_PATH/$APP_NAME"
+  end
 end
