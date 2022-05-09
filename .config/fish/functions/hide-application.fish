@@ -5,6 +5,7 @@ function hide-application
 
   if test ! -f "$APP_DEST_PATH/$APP_NAME"
     cp "$APP_SRC_PATH/$APP_NAME" "$APP_DEST_PATH"
+    chmod u+w "$APP_DEST_PATH/$APP_NAME"
     echo "NoDisplay=true" >> "$APP_DEST_PATH/$APP_NAME"
   end
 end
