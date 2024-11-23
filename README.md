@@ -9,14 +9,14 @@ cd dotfiles
 rsync -av --exclude {'README.md','.git'} . ../
 ```
 
-### Install Nix
+### Install nix and nix-darwin
 ```bash
 sh <(curl -L https://nixos.org/nix/install)
 cd ~/.config/nix
 nix run nix-darwin -- switch --flake .
 ```
 
-## Update pkg repos
+## Update flake lock file
 ```bash
 cd ~/.config/nix
 nix flake update
@@ -24,5 +24,6 @@ nix flake update
 
 ## Apply changes
 ```bash
+cd ~/.config/nix
 darwin-rebuild switch --flake .
 ```
