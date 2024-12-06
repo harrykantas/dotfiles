@@ -13,7 +13,7 @@ rsync -av --exclude {'README.md','.git'} . ../
 ```bash
 sh <(curl -L https://nixos.org/nix/install)
 cd ~/.config/nix
-nix run nix-darwin -- switch --flake .
+nix run nix-darwin -- switch --flake .#{hostname}
 ```
 
 ## Update flake lock file
@@ -25,5 +25,5 @@ nix flake update
 ## Apply changes
 ```bash
 cd ~/.config/nix
-darwin-rebuild switch --flake .
+darwin-rebuild switch --flake .#{hostname}
 ```
