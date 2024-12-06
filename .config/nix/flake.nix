@@ -7,7 +7,6 @@
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
-    # Optional: Declarative tap management
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
       flake = false;
@@ -20,120 +19,60 @@
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask }:
   let
-    configuration = { pkgs, config, ... }: {
-
-      nixpkgs.config.allowUnfree = true;
-
-      # List packages installed in system profile. To search by name, run:
-      # $ nix-env -qaP | grep wget
-      environment.systemPackages = with pkgs;
-        [
-	  alacritty
-          bottom
-	  eza
-	  fastfetch
-	  hugo
-	  hwatch
-          mkalias
-          neovim
-          ollama
-	  starship
-          tmux
-	  yt-dlp
-	  zoxide
-        ];
-
-      homebrew = {
-        enable = true;
-        brews = [
-          "mas"
-	  "podman"
-	  "podman-compose"
-	  "zsh-autosuggestions"
-	  "zsh-syntax-highlighting"
-        ];
-        casks = [
-	  "font-fira-code-nerd-font"
-          "fractal-bot"
-          "godot"
-          "ledger-live"
-	  "nordvpn"
-          "raycast"
-          "tailscale"
-	  "vlc"
-          "zed"
-        ];
-        masApps = {
-          "Steam Link" = 1246969117;
-        };
-        onActivation.cleanup = "zap";
-        onActivation.autoUpdate = true;
-        onActivation.upgrade = true;
-      };
-
-      # Auto upgrade nix package and the daemon service.
-      services.nix-daemon.enable = true;
-      # nix.package = pkgs.nix;
-
-      # Necessary for using flakes on this system.
-      nix.settings.experimental-features = "nix-command flakes";
-
-      # Create /etc/zshrc that loads the nix-darwin environment.
-      programs.zsh.enable = true;  # default shell on catalina
-      # programs.fish.enable = true;
-
-      # Set Git commit hash for darwin-version.
-      system.configurationRevision = self.rev or self.dirtyRev or null;
-
-      # Used for backwards compatibility, please read the changelog before changing.
-      # $ darwin-rebuild changelog
-      system.stateVersion = 5;
-
-      # The platform the configuration will be used on.
-      nixpkgs.hostPlatform = "aarch64-darwin";
-
-      system.activationScripts.applications.text = let
-        env = pkgs.buildEnv {
-          name = "system-applications";
-          paths = config.environment.systemPackages;
-          pathsToLink = "/Applications";
-        };
-      in
-        pkgs.lib.mkForce ''
-        # Set up applications.
-        echo "setting up /Applications..." >&2
-        rm -rf /Applications/Nix\ Apps
-        mkdir -p /Applications/Nix\ Apps
-        find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
-        while read src; do
-          app_name=$(basename "$src")
-          echo "copying $src" >&2
-          ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-        done
-        '';
-    };
-  in
-  {
-    # Build darwin flake using:
-    # $ darwin-rebuild build --flake .#ultraviolet
-    darwinConfigurations."ultraviolet" = nix-darwin.lib.darwinSystem {
+    mkDarwinConfiguration = hostname: nix-darwin.lib.darwinSystem {
       modules = [
-        configuration
+        ({ pkgs, config, ... }: let
+          machineConfig = import ./hosts/${hostname}.nix { inherit pkgs; };
+        in {
+          nixpkgs.config.allowUnfree = true;
+
+          environment.systemPackages = machineConfig.systemPackages;
+
+          homebrew = machineConfig.homebrew;
+
+          services.nix-daemon.enable = true;
+          nix.settings.experimental-features = "nix-command flakes";
+          programs.zsh.enable = true;
+          system.configurationRevision = self.rev or self.dirtyRev or null;
+          system.stateVersion = 5;
+          nixpkgs.hostPlatform = "aarch64-darwin";
+
+          system.activationScripts.applications.text = let
+            env = pkgs.buildEnv {
+              name = "system-applications";
+              paths = config.environment.systemPackages;
+              pathsToLink = "/Applications";
+            };
+          in
+            pkgs.lib.mkForce ''
+            echo "setting up /Applications..." >&2
+            rm -rf /Applications/Nix\ Apps
+            mkdir -p /Applications/Nix\ Apps
+            find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + |
+            while read src; do
+              app_name=$(basename "$src")
+              echo "copying $src" >&2
+              ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
+            done
+            '';
+        })
         nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
-            # Install Homebrew under the default prefix
             enable = true;
-            # Apple Silicon Only: Also install Homebrew under the default Intel prefix for Rosetta 2
             enableRosetta = true;
-            # User owning the Homebrew prefix
             user = "harry";
-            # Automatically migrate existing Homebrew installations
             autoMigrate = true;
           };
         }
       ];
     };
+  in
+  {
+    darwinConfigurations."ultraviolet" = mkDarwinConfiguration "ultraviolet";
+
+    # Add more machines here as needed:
+    # darwinConfigurations."machine1" = mkDarwinConfiguration "machine1";
 
     # Expose the package set, including overlays, for convenience.
     darwinPackages = self.darwinConfigurations."ultraviolet".pkgs;
