@@ -23,8 +23,6 @@ source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # exports
 export EDITOR="nvim"
-export VISUAL="zed"
-export DOCKER_HOST='unix:///var/folders/yq/yv8n0krx62scrm9srp7f2k2h0000gn/T/podman/podman-machine-default-api.sock'
 
 # aliases
 alias ls="eza --icons=always"

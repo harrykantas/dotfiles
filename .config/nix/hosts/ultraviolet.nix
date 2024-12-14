@@ -11,6 +11,7 @@
     hwatch
     mkalias
     neovim
+    nodejs_23
     ollama
     starship
     tmux
@@ -19,10 +20,13 @@
   ];
 
   homebrew = {
+    enable = true;
+
     brews = [
       "mas"
       "podman"
       "podman-compose"
+      "stow"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
     ];
@@ -33,6 +37,7 @@
       "godot"
       "ledger-live"
       "nordvpn"
+      "podman-desktop"
       "raycast"
       "signal"
       "tailscale"
