@@ -4,9 +4,8 @@
 ### Copy dotfiles
 ```bash
 brew install stow
-mkdir -p ~/dev && cd "$_"
-git clone https://github.com/harrykantas/dotfiles
-cd dotfiles
+git clone -C ~/dev https://github.com/harrykantas/dotfiles
+cd ~/dev/dotfiles
 make
 ```
 
