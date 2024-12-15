@@ -16,6 +16,8 @@
   ];
 
   homebrew = {
+    enable = true;
+
     brews = [
       "mas"
       "zsh-autosuggestions"
