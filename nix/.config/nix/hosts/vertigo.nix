@@ -35,6 +35,7 @@
 
     casks = [
       "1password-cli"
+      "docker"
       "font-fira-code-nerd-font"
       "git-credential-manager"
       "raycast"
