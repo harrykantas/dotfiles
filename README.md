@@ -1,14 +1,16 @@
-# Nix Package Management on MacOS
+# MacOS dotfiles
 
 ## Fresh install
 ### Copy dotfiles
 ```bash
+brew install stow
 mkdir -p ~/dev && cd "$_"
 git clone https://github.com/harrykantas/dotfiles
 cd dotfiles
 make
 ```
 
+## Nix Package Management
 ### Install nix and nix-darwin
 ```bash
 sh <(curl -L https://nixos.org/nix/install)
