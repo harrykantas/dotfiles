@@ -40,7 +40,6 @@
       "raycast"
       "visual-studio-code"
       "vlc"
-      "zoom"
     ];
 
     masApps = {

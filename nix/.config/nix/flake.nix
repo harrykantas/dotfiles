@@ -70,11 +70,12 @@
   in
   {
     darwinConfigurations."ultraviolet" = mkDarwinConfiguration "ultraviolet";
+    darwinConfigurations."vertigo" = mkDarwinConfiguration "vertigo";
 
     # Add more machines here as needed:
     # darwinConfigurations."machine1" = mkDarwinConfiguration "machine1";
 
     # Expose the package set, including overlays, for convenience.
-    darwinPackages = self.darwinConfigurations."ultraviolet".pkgs;
+    darwinPackages = self.darwinConfigurations."vertigo".pkgs;
   };
 }
