@@ -20,6 +20,7 @@
 
     brews = [
       "mas"
+      "stow"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
     ];
