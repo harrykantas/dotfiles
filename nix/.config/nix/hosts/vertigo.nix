@@ -38,9 +38,12 @@
       "docker"
       "font-fira-code-nerd-font"
       "git-credential-manager"
+      "google-chrome"
       "raycast"
+      "slack"
       "visual-studio-code"
       "vlc"
+      "zoom"
     ];
 
     masApps = {
