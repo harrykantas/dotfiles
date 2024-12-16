@@ -27,3 +27,4 @@ export EDITOR="nvim"
 # aliases
 alias ls="eza --icons=always"
 alias vim="nvim"
+alias dotfiles="cd ~/dev/dotfiles"
