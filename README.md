@@ -14,7 +14,7 @@ make
 ```bash
 sh <(curl -L https://nixos.org/nix/install)
 cd ~/.config/nix
-nix run nix-darwin -- switch --flake .#<hostname>
+nix --extra-experimental-features "nix-command flakes" run nix-darwin -- switch --flake .#<hostname>
 ```
 
 ## Update flake lock file
