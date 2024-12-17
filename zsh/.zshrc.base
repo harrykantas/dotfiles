@@ -1,3 +1,6 @@
+# zsh options
+setopt autocd
+
 # init starship
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
@@ -28,4 +31,5 @@ export EDITOR="nvim"
 alias ls="eza --icons=always"
 alias vim="nvim"
 alias dotfiles="cd ~/dev/dotfiles"
+alias nix-config="vim ~/dev/dotfiles/nix/.config/nix/"
 alias nix-rebuild="cd ~/dev/dotfiles/nix/.config/nix && darwin-rebuild switch --flake .#$(scutil --get LocalHostName); cd -"

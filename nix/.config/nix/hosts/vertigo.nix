@@ -28,6 +28,7 @@
 
     brews = [
       "mas"
+      "ollama"
       "stow"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
