@@ -15,3 +15,7 @@ resize_increments = true
 normal.family = "FiraCode Nerd Font Mono"
 size = 14
 
+[general]
+import = [
+  "~/.config/alacritty/catppuccin-mocha.toml"
+]
