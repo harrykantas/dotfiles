@@ -9,6 +9,7 @@
     coreutils
     eza
     fastfetch
+    fzf
     go
     hwatch
     mkalias

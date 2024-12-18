@@ -7,6 +7,7 @@
     bottom
     eza
     fastfetch
+    fzf
     hugo
     hwatch
     mkalias

@@ -1,6 +1,6 @@
 # init starship
 eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
 
 # history setup
 HISTFILE=$HOME/.zhistory
@@ -26,6 +26,5 @@ export EDITOR="nvim"
 
 # aliases
 alias ls="eza --icons=always"
-alias cd="z"
 alias vim="nvim"
 alias nix-rebuild="cd ~/dev/dotfiles/nix/.config/nix && darwin-rebuild switch --flake .#$(scutil --get LocalHostName); cd -"
