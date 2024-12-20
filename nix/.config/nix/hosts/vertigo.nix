@@ -18,6 +18,7 @@
     onefetch
     php
     python313
+    ripgrep
     starship
     shellcheck
     tmux
