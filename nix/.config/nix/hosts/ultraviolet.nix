@@ -25,8 +25,6 @@
 
     brews = [
       "mas"
-      "podman"
-      "podman-compose"
       "stow"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
@@ -39,7 +37,7 @@
       "godot"
       "ledger-live"
       "nordvpn"
-      "podman-desktop"
+      "docker-desktop"
       "raycast"
       "signal"
       "tailscale"
