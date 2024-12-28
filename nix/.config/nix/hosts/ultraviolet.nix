@@ -31,13 +31,13 @@
     ];
 
     casks = [
+      "docker"
       "font-fira-code-nerd-font"
       "fractal-bot"
       "git-credential-manager"
       "godot"
       "ledger-live"
       "nordvpn"
-      "docker-desktop"
       "raycast"
       "signal"
       "tailscale"
