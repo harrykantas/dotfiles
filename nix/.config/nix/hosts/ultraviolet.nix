@@ -43,8 +43,8 @@
       "raycast"
       "signal"
       "tailscale"
+      "visual-studio-code"
       "vlc"
-      "zed"
       "zoom"
     ];
 
