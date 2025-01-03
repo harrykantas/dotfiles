@@ -3,21 +3,15 @@
 {
   systemPackages = with pkgs;
   [
-    awscli
     alacritty
     bottom
-    coreutils
     eza
     fastfetch
     fzf
-    go
     hwatch
     mkalias
     neovim
-    nodejs_23
     onefetch
-    php
-    python313
     ripgrep
     starship
     shellcheck
@@ -29,8 +23,14 @@
     enable = true;
 
     brews = [
+      "awscli"
+      "coreutils"
+      "go"
       "mas"
+      "node"
       "ollama"
+      "php"
+      "python"
       "stow"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
