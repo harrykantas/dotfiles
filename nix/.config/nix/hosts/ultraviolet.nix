@@ -3,7 +3,7 @@
 {
   systemPackages = with pkgs;
   [
-    alacritty
+    bat
     bottom
     eza
     fastfetch
@@ -15,7 +15,6 @@
     nodejs_23
     ollama
     starship
-    tmux
     yt-dlp
     zoxide
   ];
