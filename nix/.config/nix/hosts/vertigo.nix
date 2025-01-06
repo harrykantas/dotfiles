@@ -29,6 +29,7 @@
       "node"
       "ollama"
       "php"
+      "pipx"
       "python"
       "stow"
       "tmux"
