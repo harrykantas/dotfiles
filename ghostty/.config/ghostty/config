@@ -1,0 +1,13 @@
+font-size = 14
+
+theme = dark:Github Dark,light:Github
+background-opacity = 0.8
+background-blur-radius = 32
+
+#window-decoration = false
+mouse-hide-while-typing = true
+quit-after-last-window-closed = true
+confirm-close-surface = false
+
+keybind = global:cmd+grave_accent=toggle_quick_terminal
+quick-terminal-screen = mouse

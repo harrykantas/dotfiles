@@ -34,6 +34,7 @@
       "docker"
       "font-fira-code-nerd-font"
       "fractal-bot"
+      "ghostty"
       "git-credential-manager"
       "godot"
       "ledger-live"

@@ -25,6 +25,7 @@
     brews = [
       "awscli"
       "coreutils"
+      "ghostty"
       "go"
       "mas"
       "node"
