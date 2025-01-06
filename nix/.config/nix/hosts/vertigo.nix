@@ -24,7 +24,6 @@
     brews = [
       "awscli"
       "coreutils"
-      "ghostty"
       "go"
       "mas"
       "node"
@@ -32,6 +31,7 @@
       "php"
       "python"
       "stow"
+      "tmux"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
     ];
@@ -40,6 +40,7 @@
       "1password-cli"
       "docker"
       "font-fira-code-nerd-font"
+      "ghostty"
       "git-credential-manager"
       "google-chrome"
       "raycast"
