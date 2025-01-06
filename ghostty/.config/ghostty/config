@@ -1,14 +1,18 @@
 font-family = "FiraCode Nerd Font Mono"
 font-size = 14
+font-thicken = true
 
-theme = dark:Github Dark,light:Github
+theme = "Github Dark"
+bold-is-bright = true
 background-opacity = 0.8
-background-blur-radius = 32
+background-blur-radius = 16
 
 #window-decoration = false
 macos-titlebar-proxy-icon = hidden
 mouse-hide-while-typing = true
 confirm-close-surface = false
 
-keybind = global:cmd+grave_accent=toggle_quick_terminal
+copy-on-select = true
+
+keybind = global:cmd+opt+§=toggle_quick_terminal
 quick-terminal-screen = mouse
