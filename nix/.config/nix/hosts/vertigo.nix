@@ -31,6 +31,7 @@
       "php"
       "pipx"
       "python"
+      "python-argcomplete"
       "stow"
       "tmux"
       "zsh-autosuggestions"

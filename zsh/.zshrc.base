@@ -1,6 +1,9 @@
-# init starship
+# sourcing
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
+source <(fzf --zsh)
+source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # history setup
 HISTFILE=$HOME/.zhistory
@@ -16,10 +19,6 @@ bindkey '^[[H' beginning-of-line
 bindkey '^[[F' end-of-line
 bindkey '^[[A' history-search-backward
 bindkey '^[[B' history-search-forward
-
-# source zsh utils
-source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # exports
 export EDITOR="nvim"
