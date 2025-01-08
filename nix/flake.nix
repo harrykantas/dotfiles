@@ -7,6 +7,11 @@
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
 
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
     homebrew-core = {
       url = "github:homebrew/homebrew-core";
@@ -18,7 +23,7 @@
     };
   };
 
-  outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, homebrew-core, homebrew-cask }:
+  outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager, nix-homebrew, homebrew-core, homebrew-cask }:
   let
     mkDarwinConfiguration = hostname: nix-darwin.lib.darwinSystem {
       modules = [
@@ -32,19 +37,17 @@
           homebrew = machineConfig.homebrew;
 
           services.nix-daemon.enable = true;
-	  users.users.harry = {
-	    home = "/Users/harry";
-	  };
-
-	  nix.extraOptions = ''
-	    auto-optimise-store = true
-	    experimental-features = nix-command flakes
-	  '';
-
+	  nix.settings.experimental-features = "nix-command flakes";
           programs.zsh.enable = true;
           system.configurationRevision = self.rev or self.dirtyRev or null;
           system.stateVersion = 5;
           nixpkgs.hostPlatform = "aarch64-darwin";
+	  security.pam.enableSudoTouchIdAuth = true;
+
+	  users.users.harry.home = "/Users/harry";
+	  home-manager.backupFileExtension = "backup";
+	  nix.configureBuildUsers = true;
+	  nix.useDaemon = true;
 
           system.activationScripts.applications.text = let
             env = pkgs.buildEnv {
@@ -65,6 +68,14 @@
             done
             '';
         })
+
+	home-manager.darwinModules.home-manager
+	{
+	  home-manager.useGlobalPkgs = true;
+	  home-manager.useUserPackages = true;
+	  home-manager.users.harry = import ./home.nix;
+	}
+
         nix-homebrew.darwinModules.nix-homebrew
         {
           nix-homebrew = {
