@@ -1,17 +1,14 @@
 # MacOS dotfiles
 
 ## Fresh install
-### Install nix, home-manager and nix-darwin
+### Install nix and dotfiles
 ```bash
-sh <(curl -L https://nixos.org/nix/install)
-nix --extra-experimental-features "nix-command flakes" run nix-darwin -- switch --flake .#<hostname>
+make install-nix
+make init
 ```
 
-## Apply new config, updates
+## Apply changes
 ```bash
 make
 ```
-or
-```bash
-darwin-rebuild switch --flake .#<hostname>
-```
+
