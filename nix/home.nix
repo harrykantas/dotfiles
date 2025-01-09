@@ -60,6 +60,9 @@
       # exports
       export EDITOR="nvim"
       export PATH=/run/current-system/sw/bin:$HOME/.nix-profile/bin:$PATH
+
+      # host specific config
+      [[ -f "$HOME/.zshrc.local" ]] && source $HOME/.zshrc.local
     '';
   };
 
