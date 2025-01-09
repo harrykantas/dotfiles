@@ -13,7 +13,6 @@
 
   home.file = {
     ".config/ghostty".source = ../ghostty;
-    ".config/nix".source = ../nix;
     ".config/starship".source = ../starship;
   };
 
@@ -26,13 +25,20 @@
   ];
 
   programs.home-manager.enable = true;
+
   programs.zsh = {
     enable = true;
+    autocd = true;
+    autosuggestion.enable = true;
+    enableCompletion = true;
+    shellAliases = {
+      ls = "eza --icons=always";
+      vim = "nvim";
+    };
     initExtra = ''
       # sourcing
       eval "$(starship init zsh)"
       eval "$(zoxide init --cmd cd zsh)"
-      source <(fzf --zsh)
       source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
       source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -54,10 +60,11 @@
       # exports
       export EDITOR="nvim"
       export PATH=/run/current-system/sw/bin:$HOME/.nix-profile/bin:$PATH
-
-      # aliases
-      alias ls="eza --icons=always"
-      alias vim="nvim"
     '';
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
   };
 }
