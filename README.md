@@ -3,8 +3,8 @@
 ## Fresh install
 ### Install nix and dotfiles
 ```bash
-make install-nix
-make init
+make nix-install
+make nix-setup
 ```
 
 ## Apply changes
