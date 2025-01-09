@@ -32,8 +32,6 @@
       "pipx"
       "python"
       "python-argcomplete"
-      "stow"
-      "tmux"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
     ];
