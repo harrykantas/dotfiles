@@ -12,11 +12,9 @@
   ];
 
   home.file = {
-    ".config/starship/starship.toml".source = ~/dev/dotfiles/starship/starship.toml;
-    ".config/nix/flake.nix".source = ~/dev/dotfiles/nix/flake.nix;
-    ".config/nix/home.nix".source = ~/dev/dotfiles/nix/home.nix;
-    ".config/nix/hosts".source = ~/dev/dotfiles/nix/hosts;
-    ".config/ghostty/config".source = ~/dev/dotfiles/ghostty/config;
+    ".config/ghostty".source = ../ghostty;
+    ".config/nix".source = ../nix;
+    ".config/starship".source = ../starship;
   };
 
   home.sessionVariables = {
@@ -60,7 +58,6 @@
       # aliases
       alias ls="eza --icons=always"
       alias vim="nvim"
-      alias nix-rebuild="cd ~/dev/dotfiles/nix/.config/nix && darwin-rebuild switch --flake .#$(scutil --get LocalHostName); cd -"
     '';
   };
 }

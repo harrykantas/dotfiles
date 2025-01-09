@@ -1,5 +1,3 @@
 all:
-	stow --verbose --target=$$HOME --restow --ignore=flake.lock */
+	darwin-rebuild switch --flake .#$(scutil --get LocalHostName)
 
-delete:
-	stow --verbose --target=$$HOME --delete */
