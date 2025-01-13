@@ -59,6 +59,7 @@
 
       # exports
       export EDITOR="nvim"
+      export HOMEBREW_NO_ANALYTICS="1"
       export PATH=/run/current-system/sw/bin:$HOME/.nix-profile/bin:$PATH
 
       # host specific config

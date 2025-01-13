@@ -15,7 +15,6 @@
     nodejs_23
     ollama
     starship
-    yt-dlp
     zoxide
   ];
 
