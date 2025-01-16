@@ -23,6 +23,7 @@
 
     brews = [
       "awscli"
+      "aws-sam-cli"
       "coreutils"
       "go"
       "mas"
