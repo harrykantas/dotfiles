@@ -33,22 +33,23 @@
           nixpkgs.config.allowUnfree = true;
 
           environment.systemPackages = machineConfig.systemPackages;
-
           homebrew = machineConfig.homebrew;
 
           services.nix-daemon.enable = true;
-	  nix.settings.experimental-features = "nix-command flakes";
-          programs.zsh.enable = true;
+	        nix.settings.experimental-features = "nix-command flakes";
           system.configurationRevision = self.rev or self.dirtyRev or null;
           system.stateVersion = 5;
           nixpkgs.hostPlatform = "aarch64-darwin";
-	  security.pam.enableSudoTouchIdAuth = true;
+	        security.pam.enableSudoTouchIdAuth = true;
 
-	  users.users.harry.home = "/Users/harry";
-	  home-manager.backupFileExtension = "backup";
-	  nix.configureBuildUsers = true;
-	  nix.useDaemon = true;
+          programs.zsh.enable = true;
 
+          users.users.harry.home = "/Users/harry";
+          nix.configureBuildUsers = true;
+          nix.useDaemon = true;
+
+          home-manager.backupFileExtension = "backup";
+          
           system.activationScripts.applications.text = let
             env = pkgs.buildEnv {
               name = "system-applications";
