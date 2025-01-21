@@ -32,7 +32,7 @@
     autosuggestion.enable = true;
     enableCompletion = true;
     shellAliases = {
-      cat = "bat";
+      cat = "bat --paging=never";
       ls = "eza --icons=always";
       vim = "nvim";
     };
