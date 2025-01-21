@@ -32,6 +32,7 @@
     autosuggestion.enable = true;
     enableCompletion = true;
     shellAliases = {
+      cat = "bat";
       ls = "eza --icons=always";
       vim = "nvim";
     };
