@@ -33,6 +33,7 @@
       "pipx"
       "python"
       "python-argcomplete"
+      "zellij"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
     ];

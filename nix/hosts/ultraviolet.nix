@@ -23,6 +23,7 @@
 
     brews = [
       "mas"
+      "zellij"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
     ];
