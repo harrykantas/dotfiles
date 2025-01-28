@@ -26,6 +26,7 @@
       "aws-sam-cli"
       "coreutils"
       "go"
+      "lazydocker"
       "mas"
       "node"
       "ollama"
