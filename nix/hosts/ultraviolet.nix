@@ -42,7 +42,6 @@
       "tailscale"
       "visual-studio-code"
       "vlc"
-      "zoom"
     ];
 
     masApps = {
