@@ -45,6 +45,7 @@
       "font-fira-code-nerd-font"
       "ghostty"
       "git-credential-manager"
+      "github"
       "google-chrome"
       "raycast"
       "slack"
