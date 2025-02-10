@@ -28,6 +28,7 @@
       "go"
       "lazydocker"
       "mas"
+      "mysql-client"
       "node"
       "ollama"
       "php"
