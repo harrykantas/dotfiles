@@ -50,6 +50,7 @@
       "google-chrome"
       "raycast"
       "slack"
+      "session-manager-plugin"
       "visual-studio-code"
       "vlc"
       "zoom"
