@@ -35,8 +35,7 @@
           environment.systemPackages = machineConfig.systemPackages;
           homebrew = machineConfig.homebrew;
 
-          services.nix-daemon.enable = true;
-	        nix.settings.experimental-features = "nix-command flakes";
+	  nix.settings.experimental-features = "nix-command flakes";
           system.configurationRevision = self.rev or self.dirtyRev or null;
           system.stateVersion = 5;
           nixpkgs.hostPlatform = "aarch64-darwin";
@@ -45,8 +44,6 @@
           programs.zsh.enable = true;
 
           users.users.harry.home = "/Users/harry";
-          nix.configureBuildUsers = true;
-          nix.useDaemon = true;
 
           home-manager.backupFileExtension = "backup";
           
