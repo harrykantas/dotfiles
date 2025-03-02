@@ -13,7 +13,6 @@
     mkalias
     neovim
     nodejs_23
-    ollama
     starship
     zoxide
   ];
@@ -23,6 +22,7 @@
 
     brews = [
       "mas"
+      "ollama"
       "zellij"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
