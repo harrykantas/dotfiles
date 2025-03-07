@@ -37,9 +37,7 @@
       vim = "nvim";
     };
     initExtra = ''
-      # sourcing
-      eval "$(starship init zsh)"
-      eval "$(zoxide init --cmd cd zsh)"
+      # zsh config
       source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
       source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -62,6 +60,10 @@
       export EDITOR="nvim"
       export HOMEBREW_NO_ANALYTICS="1"
       export PATH=/run/current-system/sw/bin:$HOME/.nix-profile/bin:$PATH
+
+      # config
+      eval "$(starship init zsh)"
+      eval "$(zoxide init --cmd cd zsh)"
 
       # host specific config
       [[ -f "$HOME/.zshrc.local" ]] && source $HOME/.zshrc.local
