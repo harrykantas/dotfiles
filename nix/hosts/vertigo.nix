@@ -49,6 +49,7 @@
       "git-credential-manager"
       "github"
       "google-chrome"
+      "obsidian"
       "raycast"
       "slack"
       "session-manager-plugin"
