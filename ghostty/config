@@ -1,6 +1,5 @@
 font-family = "FiraCode Nerd Font Mono"
 font-size = 14
-font-thicken = true
 
 theme = "Github Dark"
 bold-is-bright = true
