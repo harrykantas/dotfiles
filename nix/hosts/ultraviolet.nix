@@ -12,7 +12,6 @@
     hwatch
     mkalias
     neovim
-    nodejs_23
     starship
     zoxide
   ];
@@ -34,10 +33,7 @@
       "fractal-bot"
       "ghostty"
       "git-credential-manager"
-      "godot"
       "ledger-live"
-      "nordvpn"
-      "raycast"
       "signal"
       "tailscale"
       "visual-studio-code"
@@ -45,7 +41,6 @@
     ];
 
     masApps = {
-      "Steam Link" = 1246969117;
     };
 
     onActivation.cleanup = "zap";

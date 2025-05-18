@@ -13,5 +13,6 @@ confirm-close-surface = false
 
 copy-on-select = clipboard
 
+keybind = global:cmd+§=toggle_visibility
 keybind = global:cmd+opt+§=toggle_quick_terminal
 quick-terminal-screen = mouse

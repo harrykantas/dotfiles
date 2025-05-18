@@ -7,6 +7,7 @@
   home.username = "harry";
   home.homeDirectory = "/Users/harry";
   home.stateVersion = "24.11"; 
+  home.enableNixpkgsReleaseCheck = false;
 
   home.packages = [
   ];
