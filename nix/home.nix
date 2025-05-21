@@ -6,7 +6,7 @@
 {
   home.username = "harry";
   home.homeDirectory = "/Users/harry";
-  home.stateVersion = "24.11"; 
+  home.stateVersion = "25.05"; 
   home.enableNixpkgsReleaseCheck = false;
 
   home.packages = [
@@ -37,7 +37,7 @@
       ls = "eza --icons=always";
       vim = "nvim";
     };
-    initExtra = ''
+    initContent = ''
       # zsh config
       source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
       source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
