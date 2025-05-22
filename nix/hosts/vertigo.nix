@@ -15,6 +15,7 @@
     ripgrep
     starship
     shellcheck
+    wget
     zoxide
   ];
 
@@ -32,10 +33,13 @@
       "mysql-client"
       "node"
       "ollama"
+      "pgcli"
       "php"
       "pipx"
+      "pyenv"
       "python"
       "python-argcomplete"
+      "qemu"
       "zellij"
       "zsh-autosuggestions"
       "zsh-syntax-highlighting"
@@ -49,10 +53,11 @@
       "git-credential-manager"
       "github"
       "google-chrome"
+      "maccy"
       "obsidian"
-      "raycast"
       "slack"
       "session-manager-plugin"
+      "tailscale"
       "visual-studio-code"
       "vlc"
       "zoom"

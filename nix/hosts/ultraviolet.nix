@@ -34,6 +34,7 @@
       "ghostty"
       "git-credential-manager"
       "ledger-live"
+      "maccy"
       "signal"
       "tailscale"
       "visual-studio-code"
