@@ -3,13 +3,13 @@
 Plain dotfiles + a Brewfile. No nix.
 
 - **`Brewfile`** — every package this machine needs, as leaves. Single flat list.
-- **stow packages** — one directory per app; the tree inside mirrors `$HOME`.
+- **`home/`** — one stow package; the tree inside mirrors `$HOME`.
 
 ```
-zsh/.zshrc                                 ->  ~/.zshrc
-starship/.config/starship/starship.toml    ->  ~/.config/starship/starship.toml
-ghostty/.config/ghostty/config             ->  ~/.config/ghostty/config
-claude/.claude/statusline-command.sh       ->  ~/.claude/statusline-command.sh
+home/.zshrc                              ->  ~/.zshrc
+home/.config/ghostty/config              ->  ~/.config/ghostty/config
+home/.config/starship/starship.toml      ->  ~/.config/starship/starship.toml
+home/.claude/statusline-command.sh       ->  ~/.claude/statusline-command.sh
 ```
 
 ## Fresh machine
@@ -28,8 +28,7 @@ enables TouchID for sudo. Re-run it any time — every step is idempotent.
 ```bash
 make brew           # install missing packages only — never upgrades or reinstalls
 make brew-upgrade   # ...and upgrade outdated ones
-make dotfiles       # re-symlink after adding a file to a stow package
-make doctor         # check everything is wired up
+make dotfiles       # re-symlink after adding a file to home/
 ```
 
 `make help` lists the rest.
@@ -40,9 +39,8 @@ Add a line to `Brewfile`, run `make brew`.
 
 ### Adding a dotfile
 
-Drop it in the stow package at the path it should have under `$HOME` (e.g.
-`zsh/.config/foo/bar` → `~/.config/foo/bar`), then `make dotfiles`. To manage a
-new app, create `<app>/` and add it to `PKGS` in the `Makefile`.
+Drop it in `home/` at the path it should have under `$HOME` (e.g.
+`home/.config/foo/bar` → `~/.config/foo/bar`), then `make dotfiles`.
 
 ### Removing a package
 
@@ -57,8 +55,8 @@ than whole directories. That matters for `~/.config/ghostty` and `~/.claude`,
 which hold unmanaged entries (`ghostty/themes`, `settings.json`) that would be
 hidden if stow replaced the directory with a symlink.
 
-Symlinks are relative to `$HOME`, so moving this repo breaks them — re-run
-`make dotfiles` afterwards.
+Symlinks are relative — stow has no option for absolute ones — so moving this
+repo breaks them. Re-run `make dotfiles` afterwards.
 
 TouchID for sudo lives in `/etc/pam.d/sudo_local`. macOS ships only a
 `.template` there, and wipes edits to `/etc/pam.d/sudo` on major updates;
