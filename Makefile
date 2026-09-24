@@ -38,6 +38,7 @@ brew:
 
 brew-upgrade:
 	@echo "==> Installing missing packages and upgrading outdated"
+	@$(BREW) update
 	@$(BREW) bundle install --upgrade --file=Brewfile
 
 brew-prune:
