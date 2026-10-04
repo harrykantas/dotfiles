@@ -10,7 +10,7 @@ BREW=${BREW:-/opt/homebrew/bin/brew}
 FILE=${FILE:-Brewfile}
 
 # The dry run loads every cask, so non-Apple taps must be trusted first.
-"$(dirname "$0")/brew-trust.sh" >/dev/null
+FILE="$FILE" "$(dirname "$0")/brew-trust.sh" >/dev/null
 
 echo "==> Packages not in $FILE (candidates for removal):"
 plan=$("$BREW" bundle cleanup --file="$FILE" 2>&1) || true

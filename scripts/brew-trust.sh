@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Trust casks from non-Apple taps.
+# Trust every Brewfile entry marked `trusted: true`.
 #
 # Apple's Homebrew fork runs with HOMEBREW_REQUIRE_TAP_TRUST, which refuses to
 # load formulae/casks from non-Apple taps until they are trusted. `brew trust`
@@ -7,17 +7,19 @@
 set -euo pipefail
 
 BREW=${BREW:-/opt/homebrew/bin/brew}
-
-CASKS=(
-    "msitarzewski/brew-browser/brew-browser"
-)
+FILE=${FILE:-Brewfile}
 
 [[ -x $BREW ]] || { echo "error: $BREW not found" >&2; exit 1; }
 
-for cask in "${CASKS[@]}"; do
-  if "$BREW" trust --cask "$cask" >/dev/null 2>&1; then
-    echo "  trusted  $cask"
+while read -r type name; do
+  case $type in
+    tap)  flag=--tap ;;
+    brew) flag=--formula ;;
+    cask) flag=--cask ;;
+  esac
+  if "$BREW" trust "$flag" "$name" >/dev/null 2>&1; then
+    echo "  trusted  $name"
   else
-    echo "  WARN: could not trust $cask" >&2
+    echo "  WARN: could not trust $name" >&2
   fi
-done
+done < <(sed -nE 's/^(tap|brew|cask) "([^"]+)".*trusted: *true.*/\1 \2/p' "$FILE")
