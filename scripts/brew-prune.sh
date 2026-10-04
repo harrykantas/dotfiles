@@ -9,12 +9,14 @@ set -euo pipefail
 BREW=${BREW:-/opt/homebrew/bin/brew}
 FILE=${FILE:-Brewfile}
 
-echo "==> Packages not in $FILE (candidates for removal):"
-if "$BREW" bundle cleanup --file="$FILE" 2>&1 | tee /tmp/brew-prune-plan.txt | grep -q .; then
-  :
-fi
+# The dry run loads every cask, so non-Apple taps must be trusted first.
+"$(dirname "$0")/brew-trust.sh" >/dev/null
 
-if ! grep -qE 'Would (uninstall|untap|zap)' /tmp/brew-prune-plan.txt; then
+echo "==> Packages not in $FILE (candidates for removal):"
+plan=$("$BREW" bundle cleanup --file="$FILE" 2>&1) || true
+echo "$plan"
+
+if ! grep -qE 'Would (uninstall|untap|zap)' <<<"$plan"; then
   echo "==> Nothing to prune."
   exit 0
 fi

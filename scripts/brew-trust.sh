@@ -9,7 +9,7 @@ set -euo pipefail
 BREW=${BREW:-/opt/homebrew/bin/brew}
 
 CASKS=(
-    "msitarzewski/brew-browser"
+    "msitarzewski/brew-browser/brew-browser"
 )
 
 [[ -x $BREW ]] || { echo "error: $BREW not found" >&2; exit 1; }
