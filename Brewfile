@@ -10,8 +10,6 @@ cask_args appdir: "~/Applications",
 
 # taps ------------------------------------------------------------------------
 
-tap "msitarzewski/brew-browser"
-
 # formulae --------------------------------------------------------------------
 
 brew "awscli"
@@ -41,7 +39,6 @@ brew "zsh-syntax-highlighting"
 
 # casks -----------------------------------------------------------------------
 
-cask "msitarzewski/brew-browser/brew-browser", trusted: true
 cask "claude"
 cask "claude-code"
 cask "ghostty"

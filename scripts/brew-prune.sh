@@ -23,7 +23,10 @@ fi
 
 echo
 echo "!!! --zap also deletes application data and preferences. This is not reversible."
-read -r -p "Type 'yes' to proceed: " reply
-[[ $reply == yes ]] || { echo "Aborted."; exit 1; }
+# Discard keys typed during the dry run so they cannot answer the prompt.
+while read -r -t 0.1 _ </dev/tty; do :; done
+read -r -p "Type 'yes' to proceed: " reply </dev/tty
+reply=${reply//[[:space:]]/}
+[[ $reply == yes ]] || { printf 'Aborted (got %q).\n' "$reply"; exit 1; }
 
 "$BREW" bundle cleanup --force --zap --file="$FILE"

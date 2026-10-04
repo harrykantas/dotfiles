@@ -909,7 +909,7 @@
 		<key>panelShowToggles</key>
 		<true/>
 		<key>panelShowUtilities</key>
-		<true/>
+		<false/>
 		<key>panelShowWallpaper</key>
 		<true/>
 		<key>panelToggleDarkMode</key>
@@ -1174,7 +1174,7 @@
 		<key>screenshotWatermarkPresets</key>
 		<string>[]</string>
 		<key>screenshotWatermarkStyle</key>
-		<string>{"opacity":0.4,"rotation":0,"color":"white","anchor":"bottomTrailing","size":0.3,"text":"","kind":"none"}</string>
+		<string>{"kind":"none","rotation":0,"opacity":0.4,"text":"","size":0.3,"color":"white","anchor":"bottomTrailing"}</string>
 		<key>scrollHorizontalEnabled</key>
 		<false/>
 		<key>scrollHorizontalModifier</key>
@@ -1334,11 +1334,11 @@
 		<key>windowEdgeSnapEnabled</key>
 		<true/>
 		<key>windowGestureEnabled</key>
-		<false/>
+		<true/>
 		<key>windowGestureModifiers</key>
 		<string>control+command</string>
 		<key>windowGestureRaiseWindow</key>
-		<false/>
+		<true/>
 		<key>windowLayoutHiddenActions</key>
 		<string></string>
 		<key>windowLayoutIgnoredApps</key>
