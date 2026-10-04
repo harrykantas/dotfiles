@@ -6,6 +6,8 @@
 	<dict>
 		<key>appAppearance</key>
 		<string>system</string>
+		<key>appOutputDevices</key>
+		<dict/>
 		<key>appUpdatesCheckFrequency</key>
 		<string>off</string>
 		<key>appUpdatesIncludeAppStore</key>
@@ -96,7 +98,7 @@
 		<key>clipboardHistoryShortcutEnabled</key>
 		<true/>
 		<key>clipboardHistorySkipSensitive</key>
-		<true/>
+		<false/>
 		<key>colorPickerBareHex</key>
 		<false/>
 		<key>colorPickerFormat</key>
@@ -352,7 +354,7 @@
 		<key>keepAwakeActiveIcon</key>
 		<string>vorssaint</string>
 		<key>keepAwakeAllowDisplaySleep</key>
-		<false/>
+		<true/>
 		<key>keepAwakeAutoStart</key>
 		<false/>
 		<key>keepAwakeAutomationRequireAll</key>
@@ -370,7 +372,7 @@
 		<key>keepAwakePauseWhenLocked</key>
 		<false/>
 		<key>keepAwakeRightClickToggle</key>
-		<false/>
+		<true/>
 		<key>keepAwakeRunningAppBundleIDs</key>
 		<array/>
 		<key>keepAwakeRunningApps</key>
@@ -894,6 +896,8 @@
 		<false/>
 		<key>panelNavigationEnabled</key>
 		<true/>
+		<key>panelSectionOrder</key>
+		<string>brightness,mixer,keepAwake,system,network,disk,power,fanControl,utilities,controls,toggles,wallpaper</string>
 		<key>panelShowBrightness</key>
 		<true/>
 		<key>panelShowControls</key>
@@ -901,7 +905,7 @@
 		<key>panelShowFanControl</key>
 		<true/>
 		<key>panelShowKeepAwake</key>
-		<true/>
+		<false/>
 		<key>panelShowToggles</key>
 		<true/>
 		<key>panelShowUtilities</key>
@@ -1170,7 +1174,7 @@
 		<key>screenshotWatermarkPresets</key>
 		<string>[]</string>
 		<key>screenshotWatermarkStyle</key>
-		<string>{"opacity":0.4,"size":0.3,"text":"","color":"white","kind":"none","anchor":"bottomTrailing","rotation":0}</string>
+		<string>{"text":"","color":"white","opacity":0.4,"rotation":0,"anchor":"bottomTrailing","size":0.3,"kind":"none"}</string>
 		<key>scrollHorizontalEnabled</key>
 		<false/>
 		<key>scrollHorizontalModifier</key>
@@ -1202,7 +1206,7 @@
 		<key>shelfShortcutEnabled</key>
 		<true/>
 		<key>showCountdownInMenuBar</key>
-		<false/>
+		<true/>
 		<key>smoothScrollCoast</key>
 		<integer>0</integer>
 		<key>smoothScrollEnabled</key>
@@ -1222,7 +1226,7 @@
 		<key>snippetSoundName</key>
 		<string>Tink</string>
 		<key>soundOutputSwitcherEnabled</key>
-		<false/>
+		<true/>
 		<key>soundOutputSwitcherShortcut</key>
 		<string>control+option+command:1</string>
 		<key>superKeyEnabled</key>
