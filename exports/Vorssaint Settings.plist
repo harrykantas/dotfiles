@@ -324,7 +324,7 @@
 		<key>featureAvailable.wallpaper</key>
 		<false/>
 		<key>featureAvailable.windowLayout</key>
-		<false/>
+		<true/>
 		<key>featureAvailable.windowMaximizer</key>
 		<true/>
 		<key>featuresOnboardingVersion</key>
@@ -1174,7 +1174,7 @@
 		<key>screenshotWatermarkPresets</key>
 		<string>[]</string>
 		<key>screenshotWatermarkStyle</key>
-		<string>{"text":"","color":"white","opacity":0.4,"rotation":0,"anchor":"bottomTrailing","size":0.3,"kind":"none"}</string>
+		<string>{"opacity":0.4,"rotation":0,"color":"white","anchor":"bottomTrailing","size":0.3,"text":"","kind":"none"}</string>
 		<key>scrollHorizontalEnabled</key>
 		<false/>
 		<key>scrollHorizontalModifier</key>
@@ -1332,7 +1332,7 @@
 		<key>windowEdgeSnapDisabledZones</key>
 		<string></string>
 		<key>windowEdgeSnapEnabled</key>
-		<false/>
+		<true/>
 		<key>windowGestureEnabled</key>
 		<false/>
 		<key>windowGestureModifiers</key>
@@ -1428,11 +1428,11 @@
 		<key>windowLayoutShortcutUpperMiddleQuarter</key>
 		<string>none</string>
 		<key>windowLayoutShortcutsEnabled</key>
-		<false/>
+		<true/>
 		<key>windowLayoutSideRepeatCyclesThirds</key>
 		<false/>
 		<key>windowLayoutWindowGap</key>
-		<integer>0</integer>
+		<integer>8</integer>
 		<key>windowMaximizeEnabled</key>
 		<true/>
 		<key>windowMaximizeExcludedApps</key>
